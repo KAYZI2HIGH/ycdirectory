@@ -2,20 +2,87 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.background {
+  background: linear-gradient(
+      to right,
+      rgba(243, 137, 71, 0.616) 2px,
+      transparent 1px
+    ),
+    linear-gradient(to right, #ff2b79 20px, #ff2b79 20px);
+  background-size: 50px 100%; /* Adjust the height as needed */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.input_fields {
+  @apply text-black px-5 py-4 rounded-full w-full border-4 border-black font-bold tracking-wide;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.input_btn {
+  @apply flex items-center justify-center h-[50px] w-[50px] rounded-full bg-black;
+}
+
+.search_form {
+  display: grid;
+  grid-template-areas: "stack";
+  place-items: end;
+  align-items: center;
+}
+
+.search_form > * {
+  grid-area: stack;
+}
+
+.tag {
+  display: inline-block;
+  position: relative;
+  background-color: #faff00; /* Yellow background */
+  color: #000; /* Black text */
+  font-weight: bold;
+  padding: 8px 16px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.tag::before,
+.tag::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #000; /* Black triangles */
+}
+
+.tag::before {
+  top: 7;
+  left: 7;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.tag::after {
+  bottom: 7;
+  right: 7;
+  clip-path: polygon(100% 100%, 0 100%, 100% 0);
+}
+
+.description {
+  @apply font-medium text-center body_text;
+}
+
+.heading_text {
+  @apply header font-bold text-center max-w-[950px] bg-black p-5 sm:p-8 text-white;
+}
+
+.header {
+  @apply text-3xl md:text-4xl lg:text-5xl cursor-default;
+}
+.section_title {
+  @apply text-xl md:text-2xl cursor-default;
+}
+.body_text {
+  @apply text-base md:text-lg cursor-default;
+}
+.normal_text {
+  @apply text-sm md:text-base;
+}
+.small_text {
+  @apply text-xs md:text-sm cursor-default;
 }
