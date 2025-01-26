@@ -7,7 +7,7 @@ import React from 'react'
 
 const StartupCards = ({ post }) => {
   return (
-    <div className="px-4 py-7 border-[5px] border-black rounded-3xl flex flex-col  w-full gap-4 max-w-[400px] mx-auto hover:border-pink-400 hover:bg-pink-100 transition-all duration-300 cursor-default">
+    <div className="px-4 py-7 border-[5px] border-black rounded-3xl flex flex-col w-full gap-4 max-w-[400px] mx-auto hover:border-pink-400 hover:bg-pink-100 transition-all duration-300 cursor-default">
       <div className="w-full flex justify-between items-center">
         <p className="normal_text py-2 px-3 rounded-full bg-[#FFE8F0] font-medium">
           <DateFormater createdDate={post._createdAt}/>

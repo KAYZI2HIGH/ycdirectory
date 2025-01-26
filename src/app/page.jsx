@@ -28,11 +28,11 @@ export default async function HomePage({ searchParams }) {
 
         <SearchForm query={query} />
       </section>
-      <section className="px-10 py-20 h-screen">
+      <section className="px-5 md:px-10 py-20">
         <h1 className="section_title font-bold tracking-wide">
           {query ? `Search Results for: "${query}"` : "Recommended startups"}
         </h1>
-        <div className="grid grid-cols-auto gap-6 mt-7 pb-10">
+        <div className="grid w-full sm:grid-cols-auto gap-6 mt-7">
           {posts.map((post, index) => (
             <StartupCards
               post={post}

@@ -7,7 +7,7 @@ const AuthorStartups = async ({id}) => {
   const posts = await client.fetch(STARTUP_BY_AUTHOR_ID_QUERY, {id})
 
   return (
-    <section className="grid grid-cols-auto gap-6 mt-7 w-full h-96">
+    <section className="grid sm:grid-cols-auto gap-6 mt-7 w-full h-96">
       {posts.map((post) => (
         <StartupCards post={post} key={post._id}/>
       ))}
